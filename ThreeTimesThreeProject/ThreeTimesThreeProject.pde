@@ -17,10 +17,10 @@ float RectHeight14, RectWidth14, RectY14, RectX14 ;
 float RectHeight15, RectWidth15, RectY15, RectX15 ;
 float RectHeight16, RectWidth16, RectY16, RectX16 ;
 float ptDiameter ;
-//float  ;
-//float  ;
-//float  ;
-//float  ;
+float button1X, button1Y, button1Width, button1Height;
+float button2X, button2Y, button2Width, button2Height;
+float button3X, button3Y, button3Width, button3Height;
+
 
 void setup() {
   size(500, 500);
@@ -89,6 +89,19 @@ void setup() {
   RectHeight16 = height*1/3 ;
   RectY16 = height*3/3 ;
   RectX16 = width*3/3;
+ //
+ button1X = width*1/3*1/3; 
+ button1Y = height*1/3*1/3; 
+ button1Width = width*1/3*1/3;
+ button1Height = height*1/3*1/3;
+ button2X = width*65/80; 
+ button2Y = height*2/5 ; 
+ button2Width = width*1/3*1/2;
+ button2Height = height*1/3*1/2;
+ button3X = width*10/20; 
+ button3Y = height*13/16; 
+ button3Width = width*1/3*1/4;
+ button3Height = height*1/3*1/4;
   
 }
 void draw() {
@@ -103,7 +116,12 @@ void draw() {
   rect(RectX9, RectY9, RectWidth9, RectHeight9) ;
   rect(RectX10, RectY10, RectWidth10, RectHeight10) ;
   rect(RectX11, RectY11, RectWidth11, RectHeight11) ;
+  //
   fill(black);
+  rect(button1X, button1Y, button1Width, button1Height);
+  rect(button2X, button2Y, button2Width, button2Height);
+  rect(button3X, button3Y, button3Width, button3Height);
+  //
   ellipse(RectX1, RectY1, ptDiameter, ptDiameter);
   ellipse(RectX2, RectY2, ptDiameter, ptDiameter);
   ellipse(RectX3, RectY3, ptDiameter, ptDiameter);
