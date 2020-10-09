@@ -1,6 +1,6 @@
 //Global Variables
-color white=255, black=0, red=#FF0303 ;
-Boolean turnOnRed= false ;
+color white=255, black=0, red=#FF0303, green=#2F9000, brown=#BC6F2F, yellow=#FFF300, blue=#000EFF ;
+Boolean turnOnRed= false, turnOnYellow=false, turnOnGreen=false, turnOnBrown=false, turnOnBlue=false;
 float RectY1, RectX1, RectWidth, RectHeight ;
 float RectY2, RectX2, RectWidth2, RectHeight2 ;
 float RectY3, RectX3, RectWidth3, RectHeight3 ;
@@ -25,74 +25,73 @@ float button4X, button4Y, button4Width, button4Height ;
 float button5X, button5Y, button5Width, button5Height ;
 float button6X, button6Y, button6Width, button6Height ;
 
-
-void setup() {
-  size(500, 500);
-  ptDiameter = width*1/27.77777777;
-  RectWidth = width*1/3 ;
-  RectHeight = height*1/3 ;
-  RectY1 = height*0 ;
-  RectX1 = width*0;
-  RectWidth2 = width*1/3 ;
-  RectHeight2 = height*1/3 ;
-  RectY2 = height*0;
-  RectX2 = width*1/3 ;
-  RectWidth3 = width*1/3 ;
-  RectHeight3 = height*1/3 ;
-  RectY3 = height*0 ;
-  RectX3 = width*2/3 ;
-  RectWidth4 = width*1/3 ;
-  RectHeight4 = height*1/3 ;
-  RectY4 = height*0 ;
-  RectX4 = width*3/3 ;
-  RectWidth5 = width*1/3 ;
-  RectHeight5 = height*1/3 ;
-  RectY5 = height*1/3;
-  RectX5 = width*0;
-  RectWidth6 = width*1/3 ;
-  RectHeight6 = height*1/3 ;
-  RectY6 = height*1/3;
-  RectX6 = width*1/3;
-  RectWidth7 = width*1/3 ;
-  RectHeight7 = height*1/3 ;
-  RectY7 = height*1/3;
-  RectX7 = width*2/3;
-  RectWidth8 = width*1/3 ;
-  RectHeight8 = height*1/3 ;
-  RectY8 = height*1/3 ;
-  RectX8 = width*3/3 ;
-  RectWidth9 = width*1/3 ;
-  RectHeight9 = height*1/3 ;
-  RectY9 = height*2/3 ;
-  RectX9 = width*0 ;
-  RectWidth10 = width*1/3 ;
-  RectHeight10 = height*1/3 ;
-  RectY10 = height*2/3 ;
-  RectX10 = width*1/3;
-  RectWidth11 = width*1/3 ;
-  RectHeight11 = height*1/3 ;
-  RectY11 = height*2/3 ;
-  RectX11 = width*2/3;
-  RectWidth12 = width*1/3 ;
-  RectHeight12 = height*1/3 ;
-  RectY12 = height*2/3 ;
-  RectX12 = width*3/3;
-  RectWidth13 = width*1/3 ;
-  RectHeight13 = height*1/3 ;
-  RectY13 = height*3/3 ;
-  RectX13 = width*0;
-  RectWidth14 = width*1/3 ;
-  RectHeight14 = height*1/3 ;
-  RectY14 = height*3/3 ;
-  RectX14 = width*1/3;
-  RectWidth15 = width*1/3 ;
-  RectHeight15 = height*1/3 ;
-  RectY15 = height*3/3 ;
-  RectX15 = width*2/3;
-  RectWidth16 = width*1/3 ;
-  RectHeight16 = height*1/3 ;
-  RectY16 = height*3/3 ;
-  RectX16 = width*3/3;
+  void setup() {
+ //size(600, 600);
+ ptDiameter = width*1/27.77777777;
+ RectWidth = width*1/3 ;
+ RectHeight = height*1/3 ;
+ RectY1 = height*0 ;
+ RectX1 = width*0;
+ RectWidth2 = width*1/3 ;
+ RectHeight2 = height*1/3 ;
+ RectY2 = height*0;
+ RectX2 = width*1/3 ;
+ RectWidth3 = width*1/3 ;
+ RectHeight3 = height*1/3 ;
+ RectY3 = height*0 ;
+ RectX3 = width*2/3 ;
+ RectWidth4 = width*1/3 ;
+ RectHeight4 = height*1/3 ;
+ RectY4 = height*0 ;
+ RectX4 = width*3/3 ;
+ RectWidth5 = width*1/3 ;
+ RectHeight5 = height*1/3 ;
+ RectY5 = height*1/3;
+ RectX5 = width*0;
+ RectWidth6 = width*1/3 ;
+ RectHeight6 = height*1/3 ;
+ RectY6 = height*1/3;
+ RectX6 = width*1/3;
+ RectWidth7 = width*1/3 ;
+ RectHeight7 = height*1/3 ;
+ RectY7 = height*1/3;
+ RectX7 = width*2/3;
+ RectWidth8 = width*1/3 ;
+ RectHeight8 = height*1/3 ;
+ RectY8 = height*1/3 ;
+ RectX8 = width*3/3 ;
+ RectWidth9 = width*1/3 ;
+ RectHeight9 = height*1/3 ;
+ RectY9 = height*2/3 ;
+ RectX9 = width*0 ;
+ RectWidth10 = width*1/3 ;
+ RectHeight10 = height*1/3 ;
+ RectY10 = height*2/3 ;
+ RectX10 = width*1/3;
+ RectWidth11 = width*1/3 ;
+ RectHeight11 = height*1/3 ;
+ RectY11 = height*2/3 ;
+ RectX11 = width*2/3;
+ RectWidth12 = width*1/3 ;
+ RectHeight12 = height*1/3 ;
+ RectY12 = height*2/3 ;
+ RectX12 = width*3/3;
+ RectWidth13 = width*1/3 ;
+ RectHeight13 = height*1/3 ;
+ RectY13 = height*3/3 ;
+ RectX13 = width*0;
+ RectWidth14 = width*1/3 ;
+ RectHeight14 = height*1/3 ;
+ RectY14 = height*3/3 ;
+ RectX14 = width*1/3;
+ RectWidth15 = width*1/3 ;
+ RectHeight15 = height*1/3 ;
+ RectY15 = height*3/3 ;
+ RectX15 = width*2/3; 
+ RectWidth16 = width*1/3 ;
+ RectHeight16 = height*1/3 ;
+ RectY16 = height*3/3 ;
+ RectX16 = width*3/3;
  //
  button1X = width*1/3*1/3; 
  button1Y = height*1/3*1/3; 
@@ -122,6 +121,22 @@ void setup() {
 }
 void draw() {
   rect(RectX1, RectY1, RectWidth, RectHeight);
+  if (turnOnYellow == true ) {
+    fill(yellow);
+  }
+  if (turnOnGreen == true) {
+    fill(green);
+  }
+  if (turnOnBrown == true) {
+    fill(brown);
+  }
+  if (turnOnRed == true ) {
+    fill(red);
+  }
+   if (turnOnBlue == true ) {
+    fill(blue);
+  }
+  rect(RectX1, RectY1, RectWidth, RectHeight);
   rect(RectX2, RectY2, RectWidth2, RectHeight2) ;
   rect(RectX3, RectY3, RectWidth3, RectHeight3) ;
   rect(RectX4, RectY4, RectWidth4, RectHeight4) ;
@@ -133,7 +148,7 @@ void draw() {
   rect(RectX10, RectY10, RectWidth10, RectHeight10) ;
   rect(RectX11, RectY11, RectWidth11, RectHeight11) ;
   //
-    if ( mouseX>=button1X && mouseX<=button1X+button1Width && mouseY>=button1Y && mouseY<=button1Y+button1Height) {
+  if ( mouseX>=button1X && mouseX<=button1X+button1Width && mouseY>=button1Y && mouseY<=button1Y+button1Height) {
     fill(red);
     rect(button1X, button1Y, button1Width, button1Height);
   } else {
@@ -160,23 +175,9 @@ void draw() {
   } else {
     fill(black);
     rect(button4X, button4Y, button4Width, button4Height);
-    }
-  if ( mouseX>=button5X && mouseX<=button5X+button5Width && mouseY>=button5Y && mouseY<=button5Y+button5Height) {
-    fill(red);
-    rect(button5X, button5Y, button5Width, button5Height);
-  } else {
-    fill(black);
-    rect(button5X, button5Y, button5Width, button5Height);
-    }
-  if ( mouseX>=button6X && mouseX<=button6X+button6Width && mouseY>=button6Y && mouseY<=button6Y+button6Height) {
-    fill(red);
-    rect(button6X, button6Y, button6Width, button6Height);
-  } else {
-    fill(black);
-    rect(button6X, button6Y, button6Width, button6Height);
   }
-  fill(black); 
   //
+  fill(black);
   rect(button1X, button1Y, button1Width, button1Height);
   rect(button2X, button2Y, button2Width, button2Height);
   rect(button3X, button3Y, button3Width, button3Height);
@@ -202,35 +203,34 @@ void draw() {
   ellipse(RectX16, RectY16, ptDiameter, ptDiameter);
   fill(white);
 }
-
 void mousePressed() {
-    if ( mouseX>=button1X && mouseX<=button1X+button1Width && mouseY>=button1Y && mouseY<=button1Y+button1Height) {}
+    if ( mouseX>=button1X && mouseX<=button1X+button1Width && mouseY>=button1Y && mouseY<=button1Y+button1Height) {
     println("Btn 1 activated");
-    turnOnRed = true;
-  }
-  {
-  if ( mouseX>=button2X && mouseX<=button2X+button1Width && mouseY>=button2Y && mouseY<=button2Y+button2Height) {}
+    turnOnYellow = true;
+   }
+  if ( mouseX>=button2X && mouseX<=button2X+button1Width && mouseY>=button2Y && mouseY<=button2Y+button2Height) {
     println("Btn 2 activated");
-    turnOnRed = true;
-  }
-  {
-  if ( mouseX>=button3X && mouseX<=button3X+button3Width && mouseY>=button3Y && mouseY<=button3Y+button3Height) {}
+    turnOnGreen = true;
+   }
+  if ( mouseX>=button3X && mouseX<=button3X+button3Width && mouseY>=button3Y && mouseY<=button3Y+button3Height) {
     println("Btn 3 activated3");
-    turnOnRed = true;
-  }
-   {
-  if ( mouseX>=button4X && mouseX<=button4X+button4Width && mouseY>=button4Y && mouseY<=button4Y+button4Height) {}
+    turnOnBrown = true;
+   }
+  if ( mouseX>=button4X && mouseX<=button4X+button4Width && mouseY>=button4Y && mouseY<=button4Y+button4Height) {
     println("Btn 4 activated");
-    turnOnRed = true;
-  }
-   {
-  if ( mouseX>=button5X && mouseX<=button5X+button5Width && mouseY>=button5Y && mouseY<=button5Y+button5Height) {}
+    turnOnBlue = true;
+   }
+  if ( mouseX>=button5X && mouseX<=button5X+button5Width && mouseY>=button5Y && mouseY<=button5Y+button5Height) {
     println("Btn 5 activated");
     turnOnRed = true;
-  }
-  {
-  if ( mouseX>=button6X && mouseX<=button6X+button6Width && mouseY>=button6Y && mouseY<=button6Y+button6Height) {}
-    println("Btn 6 activated");
-    turnOnRed = true;
+   }
+  if ( mouseX>=button6X && mouseX<=button6X+button6Width && mouseY>=button6Y && mouseY<=button6Y+button6Height) {
+   println("Btn 6 activated");
+  turnOnRed = false;
+  turnOnYellow=false;
+  turnOnGreen=false;
+  turnOnBrown=false;
+  turnOnBlue=false;
   }
   
+}
