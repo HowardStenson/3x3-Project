@@ -1,6 +1,6 @@
 //Global Variables
-color white=255, black=0, red=#FF0303, green=#2F9000, brown=#BC6F2F, yellow=#FFF300, blue=#000EFF ;
-Boolean turnOnRed= false, turnOnYellow=false, turnOnGreen=false, turnOnBrown=false, turnOnBlue=false;
+color white=255, black=0, red=#FF0303, green=#2F9000, brown=#BC6F2F, yellow=#FFF300, blue=#000EFF, pink=#FF05E7, orange=#FF8705, lime=#4BFF05 ;
+Boolean turnOnRed= false, turnOnYellow=false, turnOnGreen=false, turnOnBrown=false, turnOnBlue=false,turnOnPink=false,turnOnOrange=false,turnOnLime=false;
 float RectY1, RectX1, RectWidth, RectHeight ;
 float RectY2, RectX2, RectWidth2, RectHeight2 ;
 float RectY3, RectX3, RectWidth3, RectHeight3 ;
@@ -24,9 +24,12 @@ float button3X, button3Y, button3Width, button3Height ;
 float button4X, button4Y, button4Width, button4Height ;
 float button5X, button5Y, button5Width, button5Height ;
 float button6X, button6Y, button6Width, button6Height ;
+float button7X, button7Y, button7Width, button7Height ;
+float button8X, button8Y, button8Width, button8Height ;
+float button9X, button9Y, button9Width, button9Height ;
 
   void setup() {
- //size(600, 600);
+ size(600, 600);
  ptDiameter = width*1/27.77777777;
  RectWidth = width*1/3 ;
  RectHeight = height*1/3 ;
@@ -117,6 +120,18 @@ float button6X, button6Y, button6Width, button6Height ;
  button6Y = height*12/89; 
  button6Width = width*1/4*1/5;
  button6Height = height*1/4*1/5;
+ button7X = width*50/478; 
+ button7Y = height*73/89; 
+ button7Width = width*1/4*1/5;
+ button7Height = height*1/4*1/5;
+ button8X = width*39/46; 
+ button8Y = height*70/89; 
+ button8Width = width*1/4*1/3;
+ button8Height = height*1/4*1/3;
+ button9X = width*1/2; 
+ button9Y = height*180/400; 
+ button9Width = width*1/4*1/2;
+ button9Height = height*1/4*1/2;
   
 }
 void draw() {
@@ -136,6 +151,16 @@ void draw() {
    if (turnOnBlue == true ) {
     fill(blue);
   }
+   if (turnOnPink == true ) {
+    fill(pink);
+  }
+   if (turnOnOrange == true ) {
+    fill(orange);
+  }
+   if (turnOnLime == true ) {
+    fill(lime);
+  }
+  
   rect(RectX1, RectY1, RectWidth, RectHeight);
   rect(RectX2, RectY2, RectWidth2, RectHeight2) ;
   rect(RectX3, RectY3, RectWidth3, RectHeight3) ;
@@ -176,6 +201,41 @@ void draw() {
     fill(black);
     rect(button4X, button4Y, button4Width, button4Height);
   }
+  if ( mouseX>=button5X && mouseX<=button5X+button5Width && mouseY>=button5Y && mouseY<=button5Y+button5Height) {
+    fill(red);
+    rect(button5X, button5Y, button5Width, button5Height);
+  } else {
+    fill(black);
+    rect(button5X, button5Y, button5Width, button5Height);
+  }
+  if ( mouseX>=button6X && mouseX<=button6X+button6Width && mouseY>=button6Y && mouseY<=button6Y+button6Height) {
+    fill(red);
+    rect(button6X, button6Y, button6Width, button6Height);
+  } else {
+    fill(black);
+    rect(button6X, button6Y, button6Width, button6Height);
+  }
+  if ( mouseX>=button7X && mouseX<=button7X+button7Width && mouseY>=button7Y && mouseY<=button7Y+button7Height) {
+    fill(red);
+    rect(button7X, button7Y, button7Width, button7Height);
+  } else {
+    fill(black);
+    rect(button7X, button7Y, button7Width, button7Height);
+  }
+  if ( mouseX>=button8X && mouseX<=button8X+button8Width && mouseY>=button8Y && mouseY<=button8Y+button8Height) {
+    fill(red);
+    rect(button8X, button8Y, button8Width, button8Height);
+  } else {
+    fill(black);
+    rect(button8X, button8Y, button8Width, button8Height);
+  }
+  if ( mouseX>=button9X && mouseX<=button9X+button9Width && mouseY>=button9Y && mouseY<=button9Y+button9Height) {
+    fill(red);
+    rect(button9X, button9Y, button9Width, button9Height);
+  } else {
+    fill(black);
+    rect(button9X, button9Y, button9Width, button9Height);
+  }
   //
   fill(black);
   rect(button1X, button1Y, button1Width, button1Height);
@@ -184,6 +244,9 @@ void draw() {
   rect(button4X, button4Y, button4Width, button4Height);
   rect(button5X, button5Y, button5Width, button5Height);
   rect(button6X, button6Y, button6Width, button6Height);
+  rect(button7X, button7Y, button7Width, button7Height);
+  rect(button8X, button8Y, button8Width, button8Height);
+  rect(button9X, button9Y, button9Width, button9Height);
   //
   ellipse(RectX1, RectY1, ptDiameter, ptDiameter);
   ellipse(RectX2, RectY2, ptDiameter, ptDiameter);
@@ -223,14 +286,29 @@ void mousePressed() {
   if ( mouseX>=button5X && mouseX<=button5X+button5Width && mouseY>=button5Y && mouseY<=button5Y+button5Height) {
     println("Btn 5 activated");
     turnOnRed = true;
+  }
+  if ( mouseX>=button7X && mouseX<=button7X+button7Width && mouseY>=button7Y && mouseY<=button7Y+button7Height) {
+    println("Btn 7 activated");
+    turnOnLime=true ;
+   }
+  if ( mouseX>=button8X && mouseX<=button8X+button8Width && mouseY>=button8Y && mouseY<=button8Y+button8Height) {
+    println("Btn 8 activated");
+    turnOnOrange = true;
+   }
+  if ( mouseX>=button9X && mouseX<=button9X+button9Width && mouseY>=button5Y && mouseY<=button9Y+button9Height) {
+    println("Btn 9 activated");
+    turnOnPink = true;
    }
   if ( mouseX>=button6X && mouseX<=button6X+button6Width && mouseY>=button6Y && mouseY<=button6Y+button6Height) {
    println("Btn 6 activated");
-  turnOnRed = false;
-  turnOnYellow=false;
-  turnOnGreen=false;
-  turnOnBrown=false;
-  turnOnBlue=false;
+   turnOnRed = false;
+   turnOnYellow=false;
+   turnOnGreen=false;
+   turnOnBrown=false;
+   turnOnBlue=false;
+   turnOnPink=false;
+   turnOnOrange=false;
+   turnOnLime=false;
+  }
   }
   
-}
